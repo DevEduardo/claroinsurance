@@ -18,6 +18,10 @@ class UserSeeder extends Seeder
             'name' => 'Administrador',
             'email' => env('USER_ADMIN_EMAIL'),
             'email_verified_at' => now(),
+            'phone' => '123123123',
+            'identification_card' => '123456789',
+            'date_of_birth' => '1986-01-28',
+            'city' => 1, 
             'password' => bcrypt(env('USER_ADMIN_PASSWORD')),
         ]);
     }
