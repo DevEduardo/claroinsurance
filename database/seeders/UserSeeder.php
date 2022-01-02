@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
             'identification_card' => '123456789',
             'date_of_birth' => '1986-01-28',
             'city' => 1, 
+            'rol_id' => 1, 
             'password' => bcrypt(env('USER_ADMIN_PASSWORD')),
         ]);
     }

@@ -40,7 +40,7 @@ class AuthController extends Controller
         try {
             $this->userService->create($request);
 
-            return redirect("registration");
+            return redirect("users");
         } catch (Exception $e) {
             throw $e;
         }

@@ -20,4 +20,21 @@ class UserService
 
         return $user;
     }
+
+    public function all($numberItem)
+    {
+        return User::whereNotIn('id', [1])->paginate($numberItem);
+    }
+
+    public function update($data, $user)
+    {
+        $user->name = $data->name;
+        // $user->password = bcrypt($data->password);
+        $user->phone = $data->phone;
+        $user->date_of_birth = $data->date_of_birth;
+        $user->city = $data->city;
+        $user->update();
+
+        return $user;
+    }
 }

@@ -26,11 +26,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    @if (Auth::user()->rol_id)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('users') }}">Users</a>
+                        </li>
+                    @endif
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('signout') }}">Usuario</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('signout') }}">Correos</a>
+                        <a class="nav-link" href="{{ route('signout') }}">Emails</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('signout') }}">Logout</a>

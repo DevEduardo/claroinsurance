@@ -23,8 +23,10 @@ class CreateUsersTable extends Migration
             $table->string('identification_card');
             $table->string('date_of_birth');
             $table->string('city');
+            $table->foreignId('rol_id');
             $table->boolean('status')->default(true);
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
