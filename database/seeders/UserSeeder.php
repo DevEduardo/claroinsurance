@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
             'name' => 'Administrador',
             'email' => env('USER_ADMIN_EMAIL'),
             'email_verified_at' => now(),
-            'password' => bcrypt(env('USER_ADMIN_PASSWORD')),
+            'password' => bcrypt(env('USER_ADMIN_PASSWORDS')),
         ]);
     }
 }
