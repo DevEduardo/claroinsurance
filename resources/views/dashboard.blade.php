@@ -1,38 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Claro Insurance</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+@extends('app')
 
-<body>
-        <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
-            <div class="container">
-                <a class="navbar-brand mr-auto" href="#">Claro Insurance</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        @guest
-                        @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('users') }}">Users</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('emails') }}">Emails</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('signout') }}">Logout</a>
-                        </li>
-                        @endguest
-                    </ul>
+@section('content')
+<main class="signup-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <h4 class="card-header text-center">User data</h4>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <p>Name: <b>{{ Auth::user()->name }}</b></p>
+                                <p>Identification card: <b>{{ Auth::user()->identification_card }}</b></p>
+                                <p>Rol: <b>{{ Auth::user()->rol_id }}</b></p>
+                            </div>
+                            <div class="col-md-5">
+                                <p>Email: <b>{{ Auth::user()->email }}</b></p>
+                                <p>Phone: <b>{{ Auth::user()->phone }}</b></p>
+                                <p>City: <b>{{ Auth::user()->city }}</b></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
-    @yield('content')
-
-</body>
-
-</html>
+        </div>
+    </div>
+</main>
+@endsection

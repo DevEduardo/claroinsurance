@@ -8,24 +8,26 @@
                 <div class="card">
                     <h3 class="card-header text-center">Mails</h3>
                     <div class="card-body">
-                        <div class="table-responsive">
+                        <div class="table-responsive ">
                             <a href="{{ Route('emails.create') }}" class="btn btn-success btn-sm">Create mail</a>
-                            <table class="table table-striped">
+                            <table class="table table-striped" id="emails-table">
                                 <thead>
-                                    <th>#</th>
-                                    <th>addressee<th>
-                                    <th>matter<th>
-                                    <th>message<th>
-                                    <th>status<th>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">addressee<th>
+                                        <th scope="col">matter<th>
+                                        <th scope="col">message<th>
+                                        <th scope="col">status<th>
+                                    </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ( $emails as $email )
                                         <tr>
-                                            <td>{{$email->id}}</td>
+                                            <td scope="row">{{$email->id}}</td>
                                             <td>{{$email->addressee}}</td>
                                             <td>{{$email->matter}}</td>
                                             <td>{{$email->message}}</td>
-                                            <td class="text-danger">{{$email->status}}</td>
+                                            <td  class="text-danger">{{$email->status}}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

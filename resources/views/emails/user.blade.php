@@ -16,25 +16,6 @@
             td{
                   padding: 0;
             }
-            img{
-                  border: 0;
-            }
-            .wrapper{
-                  width: 100%;
-                  table-layout: fixed;
-                  background-color: #cccccc;
-                  padding-bottom: 20px;
-                  padding-top: 20px;
-            }
-            .main{
-                  background-color: #ffffff;
-                  margin: 0 auto;
-                  width: 100%;
-                  max-width: 600px;
-                  border-spacing: 0;
-                  font-family: sans-serif;
-                  color: #171a1b;
-            }
             
       </style>
 </head>
@@ -43,16 +24,9 @@
     <center class="wrapper">
         <table class="main" width:"100%">
             <tr>
-                    <td style="padding-left: 20px; padding-right: 25px;padding-top: 40px; padding-bottom: 40px;">
-                        <p 
-                        style="text-align: center;
-                                font-size: 20px; 
-                                font-weight: bold; 
-                                letter-spacing: 10px;
-                                width: 140px;
-                                padding: 5px;
-                                margin: 0 auto;">
-                                {{ $data->message }}
+                    <td >
+                        <p >
+                                {{ $data['message'] }}
                         </p>
                     </td>
             </tr>

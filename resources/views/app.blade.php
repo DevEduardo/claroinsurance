@@ -9,12 +9,16 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css"/>
 
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js"></script>
+
     </head>
     <body class="antialiased">
         <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
@@ -26,6 +30,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    
+                    @guest
+                    @else
                     @if (Auth::user()->rol_id)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users') }}">Users</a>
@@ -37,6 +44,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('signout') }}">Logout</a>
                     </li>
+                    @endguest
                 </ul>
             </div>
         </div>
@@ -51,4 +59,12 @@
             </div>
         </div>
     </body>
+    <script>
+        $(document).ready(function () {
+            $('#emails-table').DataTable({
+                "serverSide": true,
+                "processing": true,
+            });
+        });
+    </script>
 </html>

@@ -12,15 +12,17 @@
                             <a href="{{ Route('registration') }}" class="btn btn-success btn-sm">Create user</a>
                             <table class="table table-striped">
                                 <thead>
-                                    <th>#</th>
-                                    <th>Name<th>
-                                    <th>Email<th>
-                                    <th>Phone<th>
-                                    <th>Identification card<th>
-                                    <th>Date of birth<th>
-                                    <th>Edad<th>
-                                    <th>City<th>
-                                    <th>Actions<th>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name<th>
+                                        <th>Email<th>
+                                        <th>Phone<th>
+                                        <th>Identification card<th>
+                                        <th>Date of birth<th>
+                                        <th>Edad<th>
+                                        <th>City<th>
+                                        <th>Actions<th>
+                                    </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ( $users as $user )

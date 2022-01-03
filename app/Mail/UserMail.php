@@ -23,8 +23,8 @@ class UserMail extends Mailable
      */
     public function build()
     {
-        return $this->from(auth()->user()->email)
-            ->subject($this->data->matter)
+        return $this->from('administrador@admin.com')
+            ->subject($this->data['matter'])
             ->view('emails.user', ['data' => $this->data]);
     }
 }

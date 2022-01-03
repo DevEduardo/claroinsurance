@@ -40,7 +40,7 @@ class UserController extends Controller
     public function delete(User $user)
     {
         try {
-            $user->delete();
+            $user->trashed();
             return redirect("users");
         } catch (Exception $e) {
             throw $e;
