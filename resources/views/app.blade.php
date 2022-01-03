@@ -64,6 +64,19 @@
             $('#emails-table').DataTable({
                 "serverSide": true,
                 "processing": true,
+                "ajax":{
+                    "url": "{{ url('get/emails/') }}",
+                    "dataType": "json",
+                    "type": "POST",
+                    "data":{ _token: "{{csrf_token()}}"}
+                },
+                "columns": [
+                    { "data": "#" },
+                    { "data": "addressee" },
+                    { "data": "matter" },
+                    { "data": "message" },
+                    { "data": "status" },
+                ]
             });
         });
     </script>

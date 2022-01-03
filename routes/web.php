@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('user/{user}', [UserController::class, 'update'])->name('update');
 
     Route::get('emails/{numberItem?}', [MailController::class, 'emails'])->name('emails');
+    Route::post('get/emails', [MailController::class, 'datatable'])->name('emails.table');
     Route::get('email', function () {
         return view('emails.create');
     })->name('emails.create');

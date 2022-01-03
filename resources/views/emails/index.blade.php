@@ -21,15 +21,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ( $emails as $email )
-                                        <tr>
-                                            <td scope="row">{{$email->id}}</td>
-                                            <td>{{$email->addressee}}</td>
-                                            <td>{{$email->matter}}</td>
-                                            <td>{{$email->message}}</td>
-                                            <td  class="text-danger">{{$email->status}}</td>
-                                        </tr>
-                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

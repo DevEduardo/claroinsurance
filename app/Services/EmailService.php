@@ -23,4 +23,9 @@ class EmailService
     {
         return Email::where('user_id', auth()->user()->id)->orderBy('id', 'DESC')->paginate($numberItem);
     }
+
+    public function count()
+    {
+        return Email::where('user_id', auth()->user()->id)->count();
+    }
 }
