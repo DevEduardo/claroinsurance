@@ -24,7 +24,7 @@ class UserService
 
     public function all($numberItem)
     {
-        return User::whereNotIn('id', [1])->paginate($numberItem);
+        return User::whereNotNull('deleted_at')->whereNotIn('id', [1])->paginate($numberItem);
     }
 
     public function update($data, $user)

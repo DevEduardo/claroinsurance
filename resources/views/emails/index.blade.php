@@ -13,10 +13,10 @@
                             <table class="table table-striped" id="emails-table">
                                 <thead>
                                     <th scope="col">#</th>
-                                    <th scope="col">addressee<th>
-                                    <th scope="col">matter<th>
-                                    <th scope="col">message<th>
-                                    <th scope="col">status<th>
+                                    <th scope="col">addressee</th>
+                                    <th scope="col">matter</th>
+                                    <th scope="col">message</th>
+                                    <th scope="col">status</th>
                                 </thead>
                             </table>
                         </div>

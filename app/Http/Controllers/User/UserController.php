@@ -41,7 +41,8 @@ class UserController extends Controller
     public function delete(User $user)
     {
         try {
-            $user->trashed();
+            $user->deleted_at = now();
+            $user->update();
             return redirect("users");
         } catch (Exception $e) {
             throw $e;
@@ -113,7 +114,7 @@ class UserController extends Controller
                 $postnestedData['Date of birth'] = $user->date_of_birth;
                 $postnestedData['Edad'] = Carbon::parse($user->date_of_birth)->age;
                 $postnestedData['City'] = $user->city;
-                $postnestedData['Actions'] = "&emsp;<a href='{$dataDelete}'class='showdata' title='Delete User' ><span class='showdata glyphicon glyphicon-list'></span></a>&emsp;<a href='{$dataedit}' class='editdata' title='Edit User' ><span class='editdata glyphicon glyphicon-edit'></span></a>";
+                $postnestedData['Actions'] = "<a href='{$dataedit}' title='Edit User' class='btn btn-success btn-sm mb-3'><span>Editar</span></a><a href='{$dataDelete}' title='Delete User' class='btn btn-danger btn-sm'><span>Eliminar</span></a>";
 
                 $data_val[] = $postnestedData;
             }

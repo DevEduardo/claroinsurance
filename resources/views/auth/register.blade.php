@@ -70,14 +70,6 @@
                                 <span class="text-danger">{{ $errors->first('city') }}</span>
                                 @endif
                             </div>
-{{-- 
-                            <div class="form-group mb-3">
-                                <input type="text" placeholder="City" id="city" class="form-control" name="city"
-                                    required>
-                                @if ($errors->has('city'))
-                                <span class="text-danger">{{ $errors->first('city') }}</span>
-                                @endif
-                            </div> --}}
 
                             <div class="form-group mb-3">
                                 <input type="password" placeholder="Password" id="password" class="form-control"

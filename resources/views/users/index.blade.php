@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-<main class="signup-form">
+<main>
     <div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-11">
@@ -13,16 +13,15 @@
                             <table class="table table-striped" id="userss-table">
                                 <thead>
                                     <tr>
-
                                         <th scope="col">#</th>
-                                        <th scope="col">Name<th>
-                                        <th scope="col">Email<th>
-                                        <th scope="col">Phone<th>
-                                        <th scope="col">Identification card<th>
-                                        <th scope="col">Date of birth<th>
-                                        <th scope="col">Edad<th>
-                                        <th scope="col">City<th>
-                                        <th scope="col">Actions<th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Identification card</th>
+                                        <th>Date of birth</th>
+                                        <th>Edad</th>
+                                        <th>City</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                             </table>

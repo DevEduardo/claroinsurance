@@ -51,8 +51,15 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="City" id="city" class="form-control" name="city"
-                                    required value="{{$user->city}}">
+                                <select name="country-update" id="country" class="form-control"></select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <select name="state-update" id="state" class="form-control"></select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <select name="city" id="city" class="form-control"></select>
                                 @if ($errors->has('city'))
                                 <span class="text-danger">{{ $errors->first('city') }}</span>
                                 @endif
