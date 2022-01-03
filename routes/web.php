@@ -38,6 +38,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('user/update/{user}', [UserController::class, 'user'])->name('user.update');
     Route::get('user/delete/{user}', [UserController::class, 'delete'])->name('user.delete');
     Route::post('user/{user}', [UserController::class, 'update'])->name('update');
+    Route::post('get/users', [UserController::class, 'datatable'])->name('users.table');
+
 
     Route::get('emails/{numberItem?}', [MailController::class, 'emails'])->name('emails');
     Route::post('get/emails', [MailController::class, 'datatable'])->name('emails.table');

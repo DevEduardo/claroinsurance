@@ -33,7 +33,7 @@
                     
                     @guest
                     @else
-                    @if (Auth::user()->rol_id)
+                    @if (Auth::user()->rol_id == 1)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users') }}">Users</a>
                         </li>
@@ -49,15 +49,7 @@
             </div>
         </div>
     </nav>
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <main class="py-4">
                         @yield('content')
-                    </main>
-                </div>
-            </div>
-        </div>
     </body>
     <script>
         $(document).ready(function () {
@@ -76,6 +68,27 @@
                     { "data": "matter" },
                     { "data": "message" },
                     { "data": "status" },
+                ]
+            });
+            $('#userss-table').DataTable({
+                "serverSide": true,
+                "processing": true,
+                "ajax":{
+                    "url": "{{ url('get/users/') }}",
+                    "dataType": "json",
+                    "type": "POST",
+                    "data":{ _token: "{{csrf_token()}}"}
+                },
+                "columns": [
+                    { "data": "#" },
+                    { "data": "Name" },
+                    { "data": "Email" },
+                    { "data": "Phone" },
+                    { "data": "Identification card" },
+                    { "data": "Date of birth" },
+                    { "data": "Edad" },
+                    { "data": "City" },
+                    { "data": "Actions" },
                 ]
             });
         });

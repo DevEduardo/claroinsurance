@@ -12,16 +12,12 @@
                             <a href="{{ Route('emails.create') }}" class="btn btn-success btn-sm">Create mail</a>
                             <table class="table table-striped" id="emails-table">
                                 <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">addressee<th>
-                                        <th scope="col">matter<th>
-                                        <th scope="col">message<th>
-                                        <th scope="col">status<th>
-                                    </tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">addressee<th>
+                                    <th scope="col">matter<th>
+                                    <th scope="col">message<th>
+                                    <th scope="col">status<th>
                                 </thead>
-                                <tbody>
-                                </tbody>
                             </table>
                         </div>
                     </div>

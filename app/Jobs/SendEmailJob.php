@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Mail\UserMail;
+use App\Models\Email;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -33,6 +34,9 @@ class SendEmailJob implements ShouldQueue
     public function handle()
     {
         $email = new UserMail($this->data);
+        $emailChage = Email::find($this->data['id']);
+        $emailChage->status = 'Enviado';
+        $emailChage->update();
         Mail::to($this->data['addressee'])->send($email);
     }
 }

@@ -8,6 +8,7 @@ use App\Mail\UserMail;
 use App\Models\Email;
 use App\Services\EmailService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
@@ -28,7 +29,6 @@ class MailController extends Controller
 
     public function datatable(Request $request)
     {
-        // $emails = $this->emailService->all($numberItem);
         $totalFilteredRecord = $totalDataRecord = $draw_val = "";
         $columns_list = array(
             0 => 'id',
@@ -98,10 +98,8 @@ class MailController extends Controller
     public function store(Request $request)
     {
         try {
-            $this->emailService->create($request);
-
-            dispatch(new SendEmailJob($request->all()));
-
+            $email = $this->emailService->create($request);
+            dispatch(new SendEmailJob($email->toArray()));
             return view('emails.create');
         } catch (Exception $e) {
             throw $e;

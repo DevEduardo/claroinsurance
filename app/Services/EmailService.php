@@ -28,4 +28,13 @@ class EmailService
     {
         return Email::where('user_id', auth()->user()->id)->count();
     }
+
+    public function changeStatus($emailId)
+    {
+        $email = Email::find($emailId);
+        if ($email) {
+            $email->status = 'Enviado';
+            $email->update();
+        }
+    }
 }

@@ -9,39 +9,22 @@
                     <h3 class="card-header text-center">Users</h3>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <a href="{{ Route('registration') }}" class="btn btn-success btn-sm">Create user</a>
-                            <table class="table table-striped">
+                            <a href="{{ Route('registration') }}" class="btn btn-success btn-sm mb-5">Create user</a>
+                            <table class="table table-striped" id="userss-table">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>Name<th>
-                                        <th>Email<th>
-                                        <th>Phone<th>
-                                        <th>Identification card<th>
-                                        <th>Date of birth<th>
-                                        <th>Edad<th>
-                                        <th>City<th>
-                                        <th>Actions<th>
+
+                                        <th scope="col">#</th>
+                                        <th scope="col">Name<th>
+                                        <th scope="col">Email<th>
+                                        <th scope="col">Phone<th>
+                                        <th scope="col">Identification card<th>
+                                        <th scope="col">Date of birth<th>
+                                        <th scope="col">Edad<th>
+                                        <th scope="col">City<th>
+                                        <th scope="col">Actions<th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    @foreach ( $users as $user )
-                                        <tr>
-                                            <td>{{$user->id}}</td>
-                                            <td>{{$user->name}}</td>
-                                            <td>{{$user->email}}</td>
-                                            <td>{{$user->phone}}</td>
-                                            <td>{{$user->identification_card}}</td>
-                                            <td>{{$user->date_of_birth}}</td>
-                                            <td>{{$user->date_of_birth}}</td>
-                                            <td>{{$user->city}}</td>
-                                            <td>
-                                                <a href="{{ Route('user.update', $user->id) }}" class="btn btn-info btn-sm">Update</a>
-                                                <a href="{{ Route('user.delete', $user->id) }}" class="btn btn-danger btn-sm">Delete</a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
                             </table>
                         </div>
                     </div>
