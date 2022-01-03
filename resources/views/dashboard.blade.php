@@ -21,7 +21,7 @@
                             <a class="nav-link" href="{{ route('users') }}">Users</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('signout') }}">Emails</a>
+                            <a class="nav-link" href="{{ route('emails') }}">Emails</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('signout') }}">Logout</a>

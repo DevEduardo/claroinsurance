@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Mail\MailController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,4 +38,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('user/update/{user}', [UserController::class, 'user'])->name('user.update');
     Route::get('user/delete/{user}', [UserController::class, 'delete'])->name('user.delete');
     Route::post('user/{user}', [UserController::class, 'update'])->name('update');
+
+    Route::get('emails/{numberItem?}', [MailController::class, 'emails'])->name('emails');
+    Route::get('email', function () {
+        return view('emails.create');
+    })->name('emails.create');
+    Route::post('email', [MailController::class, 'store'])->name('email.send');
 });
