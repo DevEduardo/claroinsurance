@@ -51,12 +51,33 @@
                             </div>
 
                             <div class="form-group mb-3">
+                                <select name="country" id="country" class="form-control"></select>
+                                @if ($errors->has('country'))
+                                <span class="text-danger">{{ $errors->first('city') }}</span>
+                                @endif
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <select name="state" id="state" class="form-control"></select>
+                                @if ($errors->has('state'))
+                                <span class="text-danger">{{ $errors->first('city') }}</span>
+                                @endif
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <select name="city" id="city" class="form-control"></select>
+                                @if ($errors->has('city'))
+                                <span class="text-danger">{{ $errors->first('city') }}</span>
+                                @endif
+                            </div>
+{{-- 
+                            <div class="form-group mb-3">
                                 <input type="text" placeholder="City" id="city" class="form-control" name="city"
                                     required>
                                 @if ($errors->has('city'))
                                 <span class="text-danger">{{ $errors->first('city') }}</span>
                                 @endif
-                            </div>
+                            </div> --}}
 
                             <div class="form-group mb-3">
                                 <input type="password" placeholder="Password" id="password" class="form-control"
